@@ -6,4 +6,6 @@ def fatorial(n):
 
 if __name__ == '__main__':
 	print(fatorial(4))
+	print(fatorial(5))
+	print(fatorial(6))
 
