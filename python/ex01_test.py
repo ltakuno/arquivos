@@ -221,3 +221,106 @@ import os
 # print(math.exp(n))
 
 # print(math.pi)
+
+# class Veiculo:
+#     numeroDeRodas = 0
+
+
+# class Bicicleta(Veiculo):
+#     def __init__(self):
+#         self.numeroDeRodas = 2
+
+
+
+# b1 = Bicicleta()
+
+# print(b1.numeroDeRodas)
+
+# class Professor:
+#     def __init__(self):
+#         self.nome = ""
+
+#     def __init__(self, nome):
+#         self.nome = nome
+
+
+# p1  = Professor("Jose")
+# p2  = Professor()
+
+
+# print (p1.nome)
+# class Cliente:
+#     def __init__(self, nome, telefone):
+#         self.nome = nome
+#         self.telefone = telefone
+
+# class Conta:
+#     def __init__(self, clientes, numero, saldo = 0):
+#         self.saldo = 0
+#         self.clientes = clientes
+#         self.numero = numero
+#         self.operacoes = []
+#         self.deposito(saldo)
+
+#     def resumo(self):
+#         print('CC Número: {} Saldo: {:.2f}'
+#             .format(self.numero, self.saldo))
+
+#     def saque(self, valor):
+#         if self.saldo >= valor:
+#             self.saldo -= valor
+#             self.operacoes.append(('SAQUE', valor))
+    
+#     def deposito(self, valor):
+#         self.saldo += valor
+#         self.operacoes.append(('DEPOSITO', valor))
+
+#     def extrato(self):
+#         print("Extrato CC Numero %s\n" % self.numero)
+
+#         for o in self.operacoes:
+#             print("%10s   %10.2f" % (o[0], o[1]))
+
+#         print("\n   Saldo : %10.2f\n" % self.saldo)  
+
+# class Banco:
+#     def __init__(self, nome):
+#         self.nome = nome
+#         self.clientes = []
+#         self.contas = []
+
+#     def abre_conta(self, conta):
+#         self.contas.append(conta)
+
+#     def lista_contas(self):
+#         for c in self.contas:
+#             c.resumo()
+
+
+# class ContaEspecial(Conta):
+#     def __init__(self, clientes, numero, saldo = 0, limite = 0):
+#         super().__init__(clientes, numero, saldo)
+#         self.limite = limite
+    
+#     def saque(self, valor):
+#         if self.saldo + self.limite >= valor:
+#             self.saldo -= valor
+#             self.operacoes.append(("SAQUE", valor))
+
+# cli01 = Cliente('Joado da Silva', '111-111')
+# conta01 = ContaEspecial([cli01], 1, 1000, 2000)
+# conta01.saque(100)
+# conta01.saque(100)
+# conta01.deposito(335)
+# conta01.extrato()
+
+class Base:
+    def __init__(self):
+        print('Construindo a classe base')
+
+class Derivada(Base):
+    def __init__(self):
+        Base.__init__(self)
+        print('Construindo a classe derivada')
+
+x = Derivada()
