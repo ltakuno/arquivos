@@ -1,0 +1,14 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+
+<div class="container jumbotron">
+    <button onclick="window.location='{% url 'index' %}'" class="btn btn-default"> Voltar </button> 
+    <hr />
+    <h1>{{ entrada.nome }}</h1>
+    <hr />
+    <h5>{{ entrada.data }} </h5>
+    <p>{{ entrada.descricao }}</p>
+</div>
+
+{% endblock %}
