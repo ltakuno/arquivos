@@ -5,3 +5,11 @@ binario(X) :-
 		N is X//2,
 		binario(N),
 		write(B).
+
+
+d(0).
+d(1).
+b([A,B,C]) :- d(A), d(B), d(C).
+
+
+bin([A,B,C]) :- d(A), !, d(B), d(C).
