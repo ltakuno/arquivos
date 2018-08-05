@@ -44,3 +44,6 @@ nao_eh_membro1(X,L) :- \+ membro(X, L).
 max(X,[X]).
 max(X,[Y|R]) :- max(X,R), X>Y, !.
 max(Y,[Y|_]).
+
+rev([],B,B).
+rev([X|T], R, Y) :- rev(T, [X|R], Y).
