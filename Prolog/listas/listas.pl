@@ -47,3 +47,10 @@ max(Y,[Y|_]).
 
 rev([],B,B).
 rev([X|T], R, Y) :- rev(T, [X|R], Y).
+
+
+remova(X,[X|T],T).
+remova(X,[Y|T],[Y|T1]) :- remova(X,T,T1).
+
+permutar([],[]).
+permutar(L,[X|P]) :- remova(X, L, L1), permutar(L1,P). 
