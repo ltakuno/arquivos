@@ -58,3 +58,15 @@ remover(Valor, arvore(E,V,D), arvore(E,V,ND)) :- remover(Valor, D, ND).
 
 maiorEsq(arvore(E,Valor,nulo), Valor, E):-!.
 maiorEsq(arvore(E,V,D), Valor, arvore(E,V,ND)) :- maiorEsq(D, Valor, ND).
+
+
+buscaLargura([],[]).
+buscaLargura([arvore(Esquerda,Valor,Direita)|Calda], [Valor|Resultado]) :- bagof(X, filho(arvore(Esquerda,Valor,Direita),X), Lista),
+                                                                           append(Calda,Lista,NovaLista),
+                                                                           buscaLargura(NovaLista, Resultado),!.
+
+buscaLargura([arvore(_,Valor,_)|Calda], [Valor|Resultado]) :- buscaLargura(Calda, Resultado),!.
+
+filho(arvore(Esquerda,_,_), Esquerda) :- Esquerda \== nulo.
+filho(arvore(_,_,Direita), Direita) :- Direita \== nulo.
+
