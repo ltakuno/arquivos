@@ -1,19 +1,19 @@
+# pattern Data Access Object
 class ContatoDAO:
     def __init__(self):
         self.contatos = []
+        print ("Comecando!!")
 
-
-    def buscar(nome):
+    def buscar(self, nome):
         resultado = []
-        for contato in contatos:
+        for contato in self.contatos:
             if nome == contato.nome:
                 resultado.append(contato)
         return resultado
 
-    def inserir(contato):
-        contatos.add(contato)
+    def inserir(self, contato):
+        self.contatos.append(contato)
 
-
-    def existe(contato):
-        return contatos.__contains__(contato)
+    def existe(self, contato):
+        return self.contatos.__contains__(contato)
 

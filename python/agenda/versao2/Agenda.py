@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from Contato import Contato
-contatos = []
+from ContatoDAO import ContatoDAO
+
+dao = ContatoDAO()
 
 def main():
     sair = False
@@ -39,10 +41,10 @@ def inserir_contato():
     nome = ler_nome()
     telefone = ler_telefone()
     c1 = Contato(nome,telefone)
-    if contatos.__contains__(c1):
+    if dao.existe(c1):
         print('Este contato já está cadastrado!')
     else:
-        contatos.append(c1)
+        dao.inserir(c1)
         print('Contato inserido!')
 
 def ler_nome():
@@ -70,10 +72,11 @@ def ler_telefone():
 def buscar_contato():
     print('\nBUSCA DE CONTATO')
     nome = ler_nome()
-    resultado = []
-    for c in contatos:
-        if nome == c.nome:
-            resultado.append(c)
+    # resultado = []
+    # for c in contatos:
+    #     if nome == c.nome:
+    #         resultado.append(c)
+    resultado = dao.buscar(nome)
 
     if len(resultado) == 0:
         print('Não há contato com este nome!')
