@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from Contato import Contato
-from ContatoDAO import ContatoDAO
+from ContatoDAO import ContatoDAO 
 
 dao = ContatoDAO()
 
