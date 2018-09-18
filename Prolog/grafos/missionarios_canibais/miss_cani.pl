@@ -22,7 +22,7 @@ seguinte(estado(M,C,d), estado(M1,C,e)) :- Md is 3-M,
                                           ((Md>=1, M1 is M+1);(Md>=2, M1 is M+2)).
 seguinte(estado(M,C,d), estado(M,C1,e)) :- Cd is 3-C,
                                            ((Cd>=1, C1 is C+1);(Cd>=2, C1 is C+2)).
-seguinte(estado(M,C,d), estado(M1,C1,e)):- Md is 3-M, Cd is 3-M,
+seguinte(estado(M,C,d), estado(M1,C1,e)):- Md is 3-M, Cd is 3-C,
                                            Md>=1, Cd>=1, M1 is M+1, C1 is C+1.
 
 
@@ -44,19 +44,19 @@ explica(estado(M,C,Marg), estado(M1,C,_)) :-
            (Mm is M1-M, Marg1=direita, Marg2=esquerda)),
            write('passaram '), write(Mm), 
            write(' missionarios da margem '), write(Marg1), 
-           write(' para a margem '), write(Marg2), nl.
+           write(' para a margem '), write(Marg2).
 explica(estado(M,C,Marg), estado(M,C1,_)) :-
           ((Marg=e, Cc is C-C1, Marg1=esquerda, Marg2=direita);
            (Cc is C1-C, Marg1=direita, Marg2=esquerda)),
            write('passaram '), write(Cc), 
            write(' canibais da margem '), write(Marg1), 
-           write(' para a margem '), write(Marg2), nl.
+           write(' para a margem '), write(Marg2).
 explica(estado(M,C,Marg), estado(M1,C1,_)) :-
           ((Marg=e, Mm is M-M1, Cc is C-C1, Marg1=esquerda, Marg2=direita);
            (Mm is M1-M, Cc is C1-C, Marg1=direita, Marg2=esquerda)),
            write('passaram '), write(Mm), write(' missionarios e '), 
            write(Cc), write(' canibais da margem '), write(Marg1), 
-           write(' para a margem '), write(Marg2), nl.
+           write(' para a margem '), write(Marg2).
 
 
 
