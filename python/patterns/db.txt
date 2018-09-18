@@ -1,3 +1,0 @@
-[{"nome":"Jose", "sobrenome":"Silva"},
-{"nome":"Maria", "sobrenome":"Santos"},
-{"nome":"Pedro", "sobrenome":"Costa"}]
