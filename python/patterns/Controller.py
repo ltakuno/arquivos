@@ -16,5 +16,4 @@ class Controller:
         self.apresentar_conteudo()
         self.viewPessoa.rodape()
 
-if __name__ == '__main__':
-    Controller().executar()
+
