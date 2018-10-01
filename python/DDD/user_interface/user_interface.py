@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-from domain.services.ClienteService import ClienteService
+from domain.services.ClienteService import *
 
 class Aplicacao:
     def menu(self):
@@ -15,7 +15,7 @@ class Aplicacao:
     def cadastrar_cliente(self):
         cpf = input('CPF:')
         nome = input('Nome: ')
-        print('Olá %s \n' % (nome))
-        cliserv = ClienteService(cpf, nome)
+        servico = ClienteService()
+        servico.registrarClientecom(cpf, nome)
 
 

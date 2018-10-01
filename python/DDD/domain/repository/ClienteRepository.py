@@ -1,28 +1,7 @@
 from domain.entities.Cliente import Cliente
+from .Repositorio import Repositorio
+from .ClienteValidador import ClienteValidador
 
-
-class ValidationError(Exception):
-    pass
-
-class Repositorio(object):
-    repositorios = {}
-
-    @classmethod
-    def registrar(cls, type_, repositorio):
-        cls.repositorios[type_] = repositorio
-
-    @classmethod
-    def get(cls, tipo_):
-        return cls.repositorios[tipo_]
-
-    @classmethod
-    def todos(cls):
-        return cls.repositorios
-
-class ClienteValidador:
-    def validar(self, cliente):
-        if not(cliente.cpf):
-            raise ValidationError
 
 class ClienteRepositorio:
     def __init__(self, validador=None):
@@ -31,7 +10,7 @@ class ClienteRepositorio:
         self.validador =  validador
 
 
-    def gravar(self, cliente):
+    def salvar(self, cliente):
         self.validador.validar(cliente)
         cliente.id = self.prox_id
         self.clientes[self.prox_id] = cliente
@@ -49,5 +28,5 @@ class ClienteRepositorio:
 
 
 if __name__ == '__main__':
-    Repositorio.registrar('Cliente', ClienteRepositorio(validador=ClienteValidador))
+    Repositorio.registrar('Cliente', ClienteRepositorio(validador=ClienteValidador()))
     
