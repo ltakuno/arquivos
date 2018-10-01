@@ -11,6 +11,8 @@ class Aplicacao:
     def executar(self, opcao):
         if (opcao == 1):
             self.cadastrar_cliente()
+        if (opcao == 2):
+            print('Encerrando o programa')
 
     def cadastrar_cliente(self):
         cpf = input('CPF:')

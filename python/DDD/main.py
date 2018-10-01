@@ -5,6 +5,9 @@ from user_interface.user_interface import Aplicacao
 def main():
     aplicacao = Aplicacao()
     opcao = aplicacao.menu()
-    aplicacao.executar(opcao)
+
+    while (opcao != 2):
+        aplicacao.executar(opcao)
+        opcao = aplicacao.menu()
 
 main()    
