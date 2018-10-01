@@ -1,5 +1,4 @@
-import sys
-sys.path.append("..")
+from domain.entities.Cliente import Cliente
 
 
 class ValidationError(Exception):
