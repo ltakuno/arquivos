@@ -6,7 +6,7 @@ def main():
     aplicacao = Aplicacao()
     opcao = aplicacao.menu()
 
-    while (opcao != 2):
+    while (opcao != 3):
         aplicacao.executar(opcao)
         opcao = aplicacao.menu()
 

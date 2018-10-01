@@ -18,7 +18,7 @@ class ClienteRepositorio:
         return cliente
 
     def todos(self):
-        self.clientes
+        return self.clientes.values()
     
     def obter(self, id):
         return self.clientes[id]
