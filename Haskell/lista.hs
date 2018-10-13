@@ -56,3 +56,21 @@ todos_pares :: [Int] -> Bool
 todos_pares [] = True 
 todos_pares (x:xs) | (mod x 2 /= 0) = False
                    | otherwise = todos_pares xs
+
+concatenar::[[a]]->[a]
+concatenar [] = []
+concatenar (a:x) = a ++ concatenar x
+
+contem :: (Eq a) => [a] -> a -> Bool
+contem [] a =  False
+contem (x:xs) a = if (a == x) then True else contem xs a
+
+
+obter :: Int->[a]->[a]
+obter m xs = case (m,xs) of
+              (0, _) -> []
+              (_, []) -> []
+              (n, y:ys) -> y : obter(n-1) ys
+ 
+concatena :: [[a]] -> [a]
+concatena xss = [x | xs<-xss, x<-xs]              
