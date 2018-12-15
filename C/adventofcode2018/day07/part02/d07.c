@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define MAX 200
-#define NUM_TRABALHADORES 2
+#define NUM_TRABALHADORES 5 
+
 #define saida(w) (w == 0)? '.': w + 'A' - 1 
 
 int n = 0, adj[MAX][MAX] = {0};
@@ -45,10 +46,12 @@ int remove_fila(int fila[], int *inicio, int *fim)
 void remover_no_fila(int no, int fila[], int *inicio, int *fim){
    for(int i = *inicio + 1; i <= *fim; i++) {
       if (fila[i] == no) {
-         fila[i] = fila[*inicio];
+         for (int j = i; j <= *fim; j++)
+            fila[j] = fila[j + 1];
+         break;
       } 
    }
-   *inicio = *inicio + 1;
+   *fim = *fim - 1;
 }
 
 int calcula_grau_entrada(int no){
@@ -83,6 +86,26 @@ void remover_grafo(int adj[MAX][MAX], int  no, int grau_entrada[MAX]){
    }
 }
 
+int esta_alocado(int trabalhador[NUM_TRABALHADORES]){
+   
+   for (int i = 0; i < NUM_TRABALHADORES; i++)
+       if (trabalhador[i])
+          return 1;
+   return 0;
+}
+
+void mostrar_tempo(int segundos, int trabalhador[NUM_TRABALHADORES]){
+   
+   printf("segundo: %d   ", segundos);
+   for (int w = 0; w < NUM_TRABALHADORES; w++)
+       if (w == 0)
+          printf("w%d: %c", w+1, saida(trabalhador[w]));
+       else
+          printf(", w%d: %c", w+1, saida(trabalhador[w]));
+  printf("\n");
+
+}
+
 int main()
 {
    leia_grafo();
@@ -103,52 +126,45 @@ int main()
          }
       }
    }
-   int fila_removidos[MAX], ini_rem = -1, fim_rem = -1; 
-   int alocado[MAX] = {0}, num_alocados = 0;
+   int alocado[MAX] = {0};
 
    while (num_nos) {
-      while (inicio <= fim) {
-         no = remove_fila(fila, &inicio, &fim);
-         insere_fila(no, fila_removidos, &ini_rem, &fim_rem); 
-      }
+      while (inicio <= fim){
+         for (int w = 0; w < NUM_TRABALHADORES; w++){
+            if (trabalhador[w] == 0) { 
+               for (int nn  = inicio; nn <= fim; nn++){
+                  no = fila[nn];
+                  if (!alocado[no]){
+                     trabalhador[w] = no + 1;
+                     termino_trabalho[w] = segundos + no + 61;
+                     alocado[no] = 1;
+                     break;
+                  }             
+               }
+            } 
 
-      while (ini_rem <= fim_rem){
-         no = remove_fila(fila_removidos, &ini_rem, &fim_rem);
-         ordenacao_topologica[k++] = no;
-         insere_fila(no, fila_removidos, &ini_rem,&fim_rem);
-
-         for (int w = 0; w < NUM_TRABALHADORES; w++){ 
-            if (trabalhador[w] == 0 && !alocado[no]){
-               trabalhador[w] = no + 1;
-               termino_trabalho[w] = segundos + no + 1;
-               alocado[no] = 1;
-               num_alocados++;
-               break;
-            } else if (termino_trabalho[w] == segundos && segundos > 0) {
-               remover_no_fila(trabalhador[w]-1, fila_removidos, &ini_rem, &fim_rem); 
+            if (trabalhador[w] && termino_trabalho[w] == segundos && segundos > 0) {
+               ordenacao_topologica[k++] = trabalhador[w] - 1;
+               remover_no_fila(trabalhador[w]-1, fila, &inicio, &fim);
                remover_grafo(adj, trabalhador[w] - 1, grau_entrada);
                num_nos--;
                trabalhador[w] = 0;
            
-               if (ini_rem <= fim_rem) w--;
-               num_alocados--;
+               if (inicio <= fim) w--;
             }
- //        printf("* segundo:  %d  w: %d\n ", segundos, w);
-         }
 
-         if (num_alocados){
-            printf("segundo: %d   w1: %c, w2: %c\n", segundos, saida(trabalhador[0]) , saida(trabalhador[1]));
+         }
+         if (esta_alocado(trabalhador)) {
+            mostrar_tempo(segundos, trabalhador);
             segundos++;
          }
       }
    }
-      
-    
+   printf("Parte 01: ");
+   for (int i = 0; i < k; i++)
+     printf("%c", ordenacao_topologica[i] + 'A');
 
-//   printf("Nos depois da ordenacao topologica: \n");
-//   for (int i = 0; i < k; i++)
-//       printf("%c", ordenacao_topologica[i] + 'A'); 
-//   printf("\n");
+   printf("\n");
 
    printf("Parte 02: %d\n", segundos);
    return 0;

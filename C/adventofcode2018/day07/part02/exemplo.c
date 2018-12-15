@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define INPUT "../input/07.txt"
+#define INPUT "input.txt"
 
 #define LOCKSID 5
 #define LOCKEDID 36
