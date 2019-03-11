@@ -1,0 +1,5 @@
+compilar
+   mpicc propagacao.c -o propagacao
+
+executar
+   mpirun -np 6 ./propagacao 
