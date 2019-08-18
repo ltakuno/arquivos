@@ -8,12 +8,7 @@
 //          interseccao entre v1 e v2  
 //[]-------------------------------------------------------------[
 int contar_quantidade_de_elementos_da_interseccao(int v1[], int n1, int v2[], int n2){
-   int contador = 0;
-   for(int i = 0; i < n1; i++)
-      for(int j = 0; j < n2; j++)
-	   if (v1[i] == v2[j])
-		   contador++;
-   return contador;
+   return 0;
 }
 
 
