@@ -1,0 +1,4 @@
+(sum $ map read $ words "1 2") :: Int
+
+sum $ map read $ words "1 2"
+
