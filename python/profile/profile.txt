@@ -1,0 +1,5 @@
+(idle) 1
+ex01.py:<module>:19;ex01.py:fib_seq:16;ex01.py:fib:10;ex01.py:fib:10;ex01.py:fib:10;ex01.py:fib:10;ex01.py:fib:10;ex01.py:fib:10;ex01.py:fib:10;ex01.py:fib:10;ex01.py:fib:10;ex01.py:fib:10;ex01.py:fib:10;ex01.py:fib:10;ex01.py:fib:10;ex01.py:fib:10 1
+ex01.py:<module>:19;ex01.py:fib_seq:15;ex01.py:fib_seq:15;ex01.py:fib_seq:15;ex01.py:fib_seq:16;ex01.py:fib:10;ex01.py:fib:10;ex01.py:fib:10;ex01.py:fib:10;ex01.py:fib:10;ex01.py:fib:10;ex01.py:fib:10;ex01.py:fib:10;ex01.py:fib:10;ex01.py:fib:10;ex01.py:fib:10;ex01.py:fib:10;ex01.py:fib:10;ex01.py:fib:10;ex01.py:fib:5 1
+/usr/lib/python2.7/site.py:<module>:68;/usr/lib/python2.7/os.py:<module>:49;/usr/lib/python2.7/posixpath.py:<module>:17;/usr/lib/python2.7/warnings.py:<module>:8 1
+/usr/lib/python2.7/site.py:<module>:554;/usr/lib/python2.7/site.py:main:537;/usr/lib/python2.7/site.py:addsitepackages:319;/usr/lib/python2.7/site.py:addsitedir:196;/usr/lib/python2.7/site.py:addpackage:158 1

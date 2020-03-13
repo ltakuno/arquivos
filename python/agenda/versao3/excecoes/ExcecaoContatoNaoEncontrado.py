@@ -1,0 +1,2 @@
+class ExcecaoContatoNaoEncontrado(Exception):
+    pass

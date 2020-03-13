@@ -1,0 +1,2 @@
+class ExcecaoContatoJaEstaCadastrado(Exception):
+    pass
