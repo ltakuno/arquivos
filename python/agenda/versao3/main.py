@@ -1,8 +1,8 @@
-import apresentacao.Agenda
-
+from apresentacao.Agenda import Agenda
 
 def main():
-    apresentacao.Agenda.executar()
+    agenda = Agenda()
+    agenda.executar()
     print('Fim do programa')
 
 main()
