@@ -1,14 +1,20 @@
 #include<stdio.h>
+#include<stdbool.h>
+
+#define btoa(x) x ? "true" : "false" 
 
 //[]-------------------------------------------------------------[]
-//   Função: contar_multiplos_de_x()
-//   Entrada: vetor de inteiros v[] e o seu tamanho n, o numero x
-//   Saída: devolve a quantidade de número que são multiplos de x  
+//   Função: esta_em_ordem_crescente()
+//   Entrada: vetor de inteiros v[] e o seu tamanho n
+//   Saída: devolve true se esta em ordem crescente e false
+//          caso contrário
 //[]-------------------------------------------------------------[]
-int contar_multiplos_de_x(int v[], int n, int x){
-   return 0;
+bool esta_em_ordem_crescente(int v[], int n){
+   for (int i = 0; i < n-1; i++)
+      if (v[i] > v[i+1])
+         return false;
+   return true;
 }
-
 
 
 //[]-------------------------------------------------------------[]
@@ -16,12 +22,12 @@ int contar_multiplos_de_x(int v[], int n, int x){
 //   Entrada: valor obtido da funcao, valor esperado
 //   Saída: ok se obtido igual a esperado e nao ok caso contrario
 //[]-------------------------------------------------------------[]
-void testar(int obtido, int esperado){
+void testar(bool obtido, bool esperado){
    if (obtido == esperado)
 	   printf("Parabéns !!!");
    else
 	   printf("Ainda não !!!");
-   printf(" obtido: %d  esperado: %d\n", obtido, esperado);
+   printf(" obtido: %s  esperado: %s\n", btoa(obtido), btoa(esperado));
 }
 
 //[]-------------------------------------------------------------[]
@@ -29,52 +35,52 @@ void testar(int obtido, int esperado){
 //[]-------------------------------------------------------------[]
 void caso_de_teste01(){
    int v[6] = {1,2,3,4,5,6};
-   testar(contar_multiplos_de_x(v, 6, 2), 3);
+   testar(esta_em_ordem_crescente(v, 6), true);
 }
 
 void caso_de_teste02(){
-   int v[10] = {2,7,6,4,5,2,8,7,2,12};
-   testar(contar_multiplos_de_x(v, 10, 3), 2);
+   int v[10] = {2,7,6,4,5,9,8,7,10,12};
+   testar(esta_em_ordem_crescente(v, 10), false);
 }
 
 void caso_de_teste03(){
-   int v[10] = {12,12,65,45,12,91,82,7,13,12};
-   testar(contar_multiplos_de_x(v, 10, 4), 4);
+   int v[10] = {12,15,65,45,57,91,82,7,13,12};
+   testar(esta_em_ordem_crescente(v, 10), false);
 }
 
 void caso_de_teste04(){
-   int v[7] = {21,21,49,21,57,21,22};
-   testar(contar_multiplos_de_x(v, 7, 5), 0);
+   int v[7] = {1,3,6,10,13,14,15};
+   testar(esta_em_ordem_crescente(v, 7), true);
 }
 
 void caso_de_teste05(){
-   int v[6] = {17,2,17,4,14,18};
-   testar(contar_multiplos_de_x(v, 6, 6), 1);
+   int v[6] = {17,2,15,4,14,18};
+   testar(esta_em_ordem_crescente(v, 6), false);
 }
 
 void caso_de_teste06(){
-   int v[10] = {1,1,1,1,1,5,4,9,6,0};
-   testar(contar_multiplos_de_x(v, 10, 3), 3);
+   int v[10] = {1,8,7,3,2,5,4,9,6,0};
+   testar(esta_em_ordem_crescente(v, 10), false);
 }
 
 void caso_de_teste07(){
-   int v[10] = {2,18,27,33,22,15,24,19,26,2};
-   testar(contar_multiplos_de_x(v, 10, 3), 5);
+   int v[10] = {10,20,30,40,50,60,70,80,90,100};
+   testar(esta_em_ordem_crescente(v, 10), true);
 }
 
 void caso_de_teste08(){
-   int v[10] = {32,28,47,13,26,12,4,29,16,28};
-   testar(contar_multiplos_de_x(v, 10, 7), 2);
+   int v[10] = {32,28,47,13,26,12,4,29,16,14};
+   testar(esta_em_ordem_crescente(v, 10), false);
 }
 
 void caso_de_teste09(){
-   int v[10] = {32,32,32,32,32,32,32,32,32,32};
-   testar(contar_multiplos_de_x(v, 10, 8), 10);
+   int v[10] = {32,28,21,37,29,25,22,29,17,24};
+   testar(esta_em_ordem_crescente(v, 10), false);
 }
 
 void caso_de_teste10(){
    int v[10] = {41,28,47,27,29,35,26,39,46,32};
-   testar(contar_multiplos_de_x(v, 10, 9), 1);
+   testar(esta_em_ordem_crescente(v, 10), false);
 }
 
 
