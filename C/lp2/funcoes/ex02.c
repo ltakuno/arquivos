@@ -1,22 +1,26 @@
+//[]--------------------------------------------------------------[]
+//    Nome do arquivo: ex02.c
+//    Importante: nao altere o nome do arquivo.
+//[]--------------------------------------------------------------[]
+    
 #include<stdio.h>
-#include<stdbool.h>
-
-#define btoa(x) x ? "true" : "false" 
+#include<stdlib.h>
 
 //[]-------------------------------------------------------------[]
-//   Função: iguais()
-//   Entrada: vetor de inteiros v1[] e o seu tamanho n1,
-//            vetor de inteiros v2[] e o seu tamanho n2.
-//   Saída: devolve true se são iguais e false
-//          caso contrário.
-//          Para que os dois vetores sejam considerados iguais
-//          eles precisam ter: 
-//          1. os mesmos tamanhos;
-//          2. os mesmos elementos, independente das posições.
-//   Considere vetores sem elementos repetidos.
+//   Função: diferenca21()
+//   Entrada: inteiro n 
+//   Saída: devolve a diferenca absoluta entre n e 21 
+//          se n for maior que 21 devolve o dobro da
+//          diferenca absoluta
+//  Exemplo:        
+//          diferenca21(19) -> 2
+//          diferenca21(25) -> 8
+//  dica: abs(x) devolve o valor absoluto de x
 //[]-------------------------------------------------------------[]
-bool iguais(int v1[], int n1, int v2[], int n2){
-   return false;
+int diferenca21(int n){
+   if (n > 21)
+      return 2*(abs(n-21));
+   else return abs(n-21);
 }
 
 
@@ -25,85 +29,55 @@ bool iguais(int v1[], int n1, int v2[], int n2){
 //   Entrada: valor obtido da funcao, valor esperado
 //   Saída: ok se obtido igual a esperado e nao ok caso contrario
 //[]-------------------------------------------------------------[]
-void testar(bool obtido, bool esperado){
+void testar(int obtido, int esperado){
    if (obtido == esperado)
 	   printf("Parabéns !!!");
    else
 	   printf("Ainda não !!!");
-   printf(" obtido: %s  esperado: %s\n", btoa(obtido), btoa(esperado));
+   printf(" obtido: %d  esperado: %d\n", obtido, esperado);
 }
 
 //[]-------------------------------------------------------------[]
 //    Casos de testes
 //[]-------------------------------------------------------------[]
 void caso_de_teste01(){
-   int v1[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-   int v2[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-   
-   testar(iguais(v1, 10, v2, 10), true);
+   testar(diferenca21(19), 2);
 }
 
 void caso_de_teste02(){
-   int v1[10] = {2, 7, 6, 4, 5, 9, 8, 7, 10, 12};
-   int v2[10] = {1, 2, 3, 4, 5, 6, 7, 8,  9, 10};
-   
-   testar(iguais(v1, 10, v2, 10), false);
-}  
+   testar(diferenca21(10), 11);
+}
 
 void caso_de_teste03(){
-   int v1[10] = {12, 15, 65, 45, 57, 91, 82,  7, 13, 14};
-   int v2[10] = {14, 13,  7, 82, 91, 57, 45, 65, 15, 12};
-
-   testar(iguais(v1, 10, v2, 10), true);
+   testar(diferenca21(21), 0);
 }
 
 void caso_de_teste04(){
-   int v1[10] = {0, 3, 6, 10, 13, 14, 15, 4, 7, 9};
-   int v2[9]  = {3, 6, 10, 13, 14, 15, 4, 7, 9};
-
-   testar(iguais(v1, 10, v2, 9), false);
+   testar(diferenca21(22), 2);
 }
 
 void caso_de_teste05(){
-   int v1[10] = {0, 3, 6, 10, 13, 14, 15, 4, 7, 9};
-   int v2[10] = {10, 13, 16, 20, 23, 24, 25, 14, 17,19};
-
-   testar(iguais(v1, 10, v2, 10), false);
+   testar(diferenca21(25), 8);
 }
 
 void caso_de_teste06(){
-   int v1[10] = {1,   8,  7,  3,  2,  5,  4,  9,  6, 0};
-   int v2[10] = {10, 13, 16, 20, 23, 24, 25, 14, 17,19};
-
-   testar(iguais(v1, 10, v2, 10), false);
+   testar(diferenca21(30), 18);
 }
 
 void caso_de_teste07(){
-   int v1[10] = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
-   int v2[10] = { 1,  2,  3,  4,  5,  6,  7,  8,   9, 10};
-   
-   testar(iguais(v1, 10, v2, 10), false);
+   testar(diferenca21(3), 18);
 }
 
 void caso_de_teste08(){
-   int v1[10] = {32,28,47,13,26,12,4,29,16,14};
-   int v2[10] = {10, 13, 16, 20, 23, 24, 25, 14, 17,19};
-
-   testar(iguais(v1, 10, v2, 10), false);
+   testar(diferenca21(5), 16);
 }
 
 void caso_de_teste09(){
-   int v1[10] = {32,28,21,37,29,25,22,29,17,24};
-   int v2[10] = {32,28,21,37,29,25,22,29,17,24};
-
-   testar(iguais(v1, 10, v2, 10), true);
+   testar(diferenca21(1), 20);
 }
 
 void caso_de_teste10(){
-   int v1[10] = {41,28,47,27,29,35,26,39,46,32};
-   int v2[10] = {41,18,47,27,29,35,26,39,46,32};
-
-   testar(iguais(v1, 10, v2, 10), false);
+   testar(diferenca21(42), 42);
 }
 
 
