@@ -4,6 +4,7 @@
 //[]--------------------------------------------------------------[]
     
 #include<stdio.h>
+#include<stdlib.h>
 
 //[]-------------------------------------------------------------[]
 //   Função: diferenca21()
@@ -17,10 +18,9 @@
 //  dica: abs(x) devolve o valor absoluto de x
 //[]-------------------------------------------------------------[]
 int diferenca21(int n){
-
-   // seu codigo aqui	
-
-   return 0;
+   if (n > 21)
+      return 2*(abs(n-21));
+   else return abs(n-21);
 }
 
 
