@@ -1,19 +1,20 @@
 //[]--------------------------------------------------------------[]
-//    Nome do arquivo: ex09.c
+//    Nome do arquivo: ex04.c
 //    Importante: nao altere o nome do arquivo.
 //[]--------------------------------------------------------------[]
     
 #include<stdio.h>
 
 //[]-------------------------------------------------------------[]
-//   Função: conta9()
-//   Entrada: vetor de inteiros v e o tamanho n  
-//   Saída: devolve o numero de vezes que ocorre o  
-//          numero 9.
+//   Função: intMax()
+//   Entrada: inteiros a, b e c  
+//   Saída: devolve o maior valor 
 //[]-------------------------------------------------------------[]
-int conta9(int v[], int n){
-  // escreva seu codigo aqui...	
-  return 0;
+int intMax(int a, int b, int c){
+   int maior = a;
+   if (b > maior) maior = b;   
+   if (c > maior) maior = c;
+   return maior;
 }
 
 
@@ -34,54 +35,43 @@ void testar(int obtido, int esperado){
 //    Casos de testes
 //[]-------------------------------------------------------------[]
 void caso_de_teste01(){
-   int v[3] = {1, 2, 9}; 	
-   testar(conta9(v,3), 1);
+   testar(intMax(1, 2, 3), 3);
 }
 
 void caso_de_teste02(){
-   int v[3] = {1, 9, 9}; 	
-   testar(conta9(v,3), 2);
+   testar(intMax(1, 3, 2), 3);
 }
 
 void caso_de_teste03(){
-   int v[5] = {1, 9, 9, 3, 9}; 	
-   testar(conta9(v,5), 3);
+   testar(intMax(3, 2, 1), 3);
 }
 
-
 void caso_de_teste04(){
-   int v[3] = {1, 2, 3}; 	
-   testar(conta9(v,3), 0);
+   testar(intMax(9, 3, 3), 9);
 }
 
 void caso_de_teste05(){
-   int v[3] = {0}; 	
-   testar(conta9(v,0), 0);
+   testar(intMax(3, 9, 3), 9);
 }
 
 void caso_de_teste06(){
-   int v[5] = {4, 2, 4, 3, 1};
-   testar(conta9(v,5), 0);
+   testar(intMax(8, 2, 3), 8);
 }
 
 void caso_de_teste07(){
-   int v[5] = {9, 2, 4, 3, 1}; 	
-   testar(conta9(v,5), 1);
+   testar(intMax(-3, -2, -1), -1);
 }
 
 void caso_de_teste08(){
-   int v[3] = {9, 9, 9}; 	
-   testar(conta9(v,3), 3);
+   testar(intMax(6, 2, 5), 6);
 }
 
 void caso_de_teste09(){
-   int v[3] = {0, 0, 9}; 	
-   testar(conta9(v,3), 1);
+   testar(intMax(5, 6, 2), 6);
 }
 
 void caso_de_teste10(){
-   int v[3] = {1, 9, 1}; 	
-   testar(conta9(v,3), 1);
+   testar(intMax(5, 2, 6), 6);
 }
 
 

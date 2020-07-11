@@ -1,19 +1,26 @@
 //[]--------------------------------------------------------------[]
-//    Nome do arquivo: ex09.c
+//    Nome do arquivo: ex03.c
 //    Importante: nao altere o nome do arquivo.
 //[]--------------------------------------------------------------[]
     
 #include<stdio.h>
+#include<stdbool.h>
 
+#define btoa(x) x ? "true" : "false" 
 //[]-------------------------------------------------------------[]
-//   Função: conta9()
-//   Entrada: vetor de inteiros v e o tamanho n  
-//   Saída: devolve o numero de vezes que ocorre o  
-//          numero 9.
+//   Função: dez()
+//   Entrada: inteiros a e b  
+//   Saída: devolve true se um dos dois e 10 ou 
+//          a soma e dez
 //[]-------------------------------------------------------------[]
-int conta9(int v[], int n){
-  // escreva seu codigo aqui...	
-  return 0;
+bool dez(int a, int b){
+
+   if (a == 10 || b == 10)
+      return true;
+   if (a + b == 10)
+      return true;   
+
+   return false;
 }
 
 
@@ -22,66 +29,55 @@ int conta9(int v[], int n){
 //   Entrada: valor obtido da funcao, valor esperado
 //   Saída: ok se obtido igual a esperado e nao ok caso contrario
 //[]-------------------------------------------------------------[]
-void testar(int obtido, int esperado){
+void testar(bool obtido, bool esperado){
    if (obtido == esperado)
 	   printf("Parabéns !!!");
    else
 	   printf("Ainda não !!!");
-   printf(" obtido: %d  esperado: %d\n", obtido, esperado);
+   printf(" obtido: %s  esperado: %s\n", btoa(obtido), btoa(esperado));
 }
 
 //[]-------------------------------------------------------------[]
 //    Casos de testes
 //[]-------------------------------------------------------------[]
 void caso_de_teste01(){
-   int v[3] = {1, 2, 9}; 	
-   testar(conta9(v,3), 1);
+   testar(dez(9,10), true);
 }
 
 void caso_de_teste02(){
-   int v[3] = {1, 9, 9}; 	
-   testar(conta9(v,3), 2);
+   testar(dez(9,9), false);
 }
 
 void caso_de_teste03(){
-   int v[5] = {1, 9, 9, 3, 9}; 	
-   testar(conta9(v,5), 3);
+   testar(dez(1,9), true);
 }
 
-
 void caso_de_teste04(){
-   int v[3] = {1, 2, 3}; 	
-   testar(conta9(v,3), 0);
+   testar(dez(10, 1), true);
 }
 
 void caso_de_teste05(){
-   int v[3] = {0}; 	
-   testar(conta9(v,0), 0);
+   testar(dez(10,10), true);
 }
 
 void caso_de_teste06(){
-   int v[5] = {4, 2, 4, 3, 1};
-   testar(conta9(v,5), 0);
+   testar(dez(8,2), true);
 }
 
 void caso_de_teste07(){
-   int v[5] = {9, 2, 4, 3, 1}; 	
-   testar(conta9(v,5), 1);
+   testar(dez(8,3), false);
 }
 
 void caso_de_teste08(){
-   int v[3] = {9, 9, 9}; 	
-   testar(conta9(v,3), 3);
+   testar(dez(10,42), true);
 }
 
 void caso_de_teste09(){
-   int v[3] = {0, 0, 9}; 	
-   testar(conta9(v,3), 1);
+   testar(dez(10, 42), true);
 }
 
 void caso_de_teste10(){
-   int v[3] = {1, 9, 1}; 	
-   testar(conta9(v,3), 1);
+   testar(dez(12, -2), true);
 }
 
 

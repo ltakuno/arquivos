@@ -1,19 +1,23 @@
 //[]--------------------------------------------------------------[]
-//    Nome do arquivo: ex09.c
+//    Nome do arquivo: ex11.c
 //    Importante: nao altere o nome do arquivo.
 //[]--------------------------------------------------------------[]
     
 #include<stdio.h>
+#include<stdbool.h>
 
+#define btoa(x) x ? "true" : "false" 
 //[]-------------------------------------------------------------[]
-//   Função: conta9()
-//   Entrada: vetor de inteiros v e o tamanho n  
-//   Saída: devolve o numero de vezes que ocorre o  
-//          numero 9.
+//   Função: sequencia123()
+//   Entrada: vetor v de inteiros e o tamanho n. 
+//   Saída: devolve true se a sequencia de numeros 
+//          1, 2, 3 aparece no vetor em algum lugar.
 //[]-------------------------------------------------------------[]
-int conta9(int v[], int n){
-  // escreva seu codigo aqui...	
-  return 0;
+bool sequencia123(int v[], int n){
+  for (int i=0; i < n-2; i++) {
+    if (v[i]==1 && v[i+1]==2 && v[i+2]==3) return true;
+  }
+  return false;     
 }
 
 
@@ -22,66 +26,75 @@ int conta9(int v[], int n){
 //   Entrada: valor obtido da funcao, valor esperado
 //   Saída: ok se obtido igual a esperado e nao ok caso contrario
 //[]-------------------------------------------------------------[]
-void testar(int obtido, int esperado){
+void testar(bool obtido, bool esperado){
    if (obtido == esperado)
 	   printf("Parabéns !!!");
    else
 	   printf("Ainda não !!!");
-   printf(" obtido: %d  esperado: %d\n", obtido, esperado);
+   printf(" obtido: %s  esperado: %s\n", btoa(obtido), btoa(esperado));
 }
 
 //[]-------------------------------------------------------------[]
 //    Casos de testes
 //[]-------------------------------------------------------------[]
 void caso_de_teste01(){
-   int v[3] = {1, 2, 9}; 	
-   testar(conta9(v,3), 1);
+   int v[5] = {1,1,2,3,1};
+
+   testar(sequencia123(v, 5), true);
 }
 
 void caso_de_teste02(){
-   int v[3] = {1, 9, 9}; 	
-   testar(conta9(v,3), 2);
+   int v[5] = {1,1,2,4,1};
+
+   testar(sequencia123(v, 5), false);
 }
 
 void caso_de_teste03(){
-   int v[5] = {1, 9, 9, 3, 9}; 	
-   testar(conta9(v,5), 3);
+   int v[6] = {1,1,2,1,2,3};
+
+   testar(sequencia123(v, 6), true);
 }
 
-
 void caso_de_teste04(){
-   int v[3] = {1, 2, 3}; 	
-   testar(conta9(v,3), 0);
+   int v[6] = {1,1,2,1,2,1};
+
+   testar(sequencia123(v, 6), false);
 }
 
 void caso_de_teste05(){
-   int v[3] = {0}; 	
-   testar(conta9(v,0), 0);
+    int v[3] = {1,2,3};
+
+   testar(sequencia123(v, 3), true);
 }
 
 void caso_de_teste06(){
-   int v[5] = {4, 2, 4, 3, 1};
-   testar(conta9(v,5), 0);
+   int v[3] = {1,1,1};
+
+   testar(sequencia123(v, 3),false);
 }
 
 void caso_de_teste07(){
-   int v[5] = {9, 2, 4, 3, 1}; 	
-   testar(conta9(v,5), 1);
+   int v[2] = {1,2};
+
+   testar(sequencia123(v, 2), false);
 }
 
 void caso_de_teste08(){
-   int v[3] = {9, 9, 9}; 	
-   testar(conta9(v,3), 3);
+   int v[2] = {5,5};
+
+   testar(sequencia123(v, 2), false);
 }
 
 void caso_de_teste09(){
-   int v[3] = {0, 0, 9}; 	
-   testar(conta9(v,3), 1);
+   int v[1] = {2};
+
+   testar(sequencia123(v, 1), false);
 }
 
 void caso_de_teste10(){
-   int v[3] = {1, 9, 1}; 	
-   testar(conta9(v,3), 1);
+   int v[1] = {9};
+
+   testar(sequencia123(v, 1), false);
 }
 
 

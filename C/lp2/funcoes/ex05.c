@@ -1,19 +1,20 @@
 //[]--------------------------------------------------------------[]
-//    Nome do arquivo: ex09.c
+//    Nome do arquivo: ex05.c
 //    Importante: nao altere o nome do arquivo.
 //[]--------------------------------------------------------------[]
     
 #include<stdio.h>
+#include<stdlib.h>
 
 //[]-------------------------------------------------------------[]
-//   Função: conta9()
-//   Entrada: vetor de inteiros v e o tamanho n  
-//   Saída: devolve o numero de vezes que ocorre o  
-//          numero 9.
+//   Função: proximo10()
+//   Entrada: inteiros a, b   
+//   Saída: devolve o valor mais proximo de 10,
+//          devolve 0 em caso de empate.
 //[]-------------------------------------------------------------[]
-int conta9(int v[], int n){
-  // escreva seu codigo aqui...	
-  return 0;
+int proximo10(int a, int b){
+   // escreva seu codigo aqui ...	
+   return 0;
 }
 
 
@@ -34,54 +35,43 @@ void testar(int obtido, int esperado){
 //    Casos de testes
 //[]-------------------------------------------------------------[]
 void caso_de_teste01(){
-   int v[3] = {1, 2, 9}; 	
-   testar(conta9(v,3), 1);
+   testar(proximo10(8, 13), 8);
 }
 
 void caso_de_teste02(){
-   int v[3] = {1, 9, 9}; 	
-   testar(conta9(v,3), 2);
+   testar(proximo10(13, 8), 8);
 }
 
 void caso_de_teste03(){
-   int v[5] = {1, 9, 9, 3, 9}; 	
-   testar(conta9(v,5), 3);
+   testar(proximo10(13, 7), 0);
 }
 
-
 void caso_de_teste04(){
-   int v[3] = {1, 2, 3}; 	
-   testar(conta9(v,3), 0);
+   testar(proximo10(7, 13), 0);
 }
 
 void caso_de_teste05(){
-   int v[3] = {0}; 	
-   testar(conta9(v,0), 0);
+   testar(proximo10(9, 13), 9);
 }
 
 void caso_de_teste06(){
-   int v[5] = {4, 2, 4, 3, 1};
-   testar(conta9(v,5), 0);
+   testar(proximo10(10, 12), 10);
 }
 
 void caso_de_teste07(){
-   int v[5] = {9, 2, 4, 3, 1}; 	
-   testar(conta9(v,5), 1);
+   testar(proximo10(11, 10), 10);
 }
 
 void caso_de_teste08(){
-   int v[3] = {9, 9, 9}; 	
-   testar(conta9(v,3), 3);
+   testar(proximo10(5, 21), 5);
 }
 
 void caso_de_teste09(){
-   int v[3] = {0, 0, 9}; 	
-   testar(conta9(v,3), 1);
+   testar(proximo10(0, 20), 0);
 }
 
 void caso_de_teste10(){
-   int v[3] = {1, 9, 1}; 	
-   testar(conta9(v,3), 1);
+   testar(proximo10(10, 10), 0);
 }
 
 

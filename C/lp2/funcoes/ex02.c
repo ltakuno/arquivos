@@ -17,9 +17,7 @@
 //  dica: abs(x) devolve o valor absoluto de x
 //[]-------------------------------------------------------------[]
 int diferenca21(int n){
-
-   // seu codigo aqui	
-
+   // escreva seu codigo aqui ...	
    return 0;
 }
 

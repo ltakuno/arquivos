@@ -1,19 +1,19 @@
 //[]--------------------------------------------------------------[]
-//    Nome do arquivo: ex09.c
+//    Nome do arquivo: ex20.c
 //    Importante: nao altere o nome do arquivo.
 //[]--------------------------------------------------------------[]
     
 #include<stdio.h>
+#include<stdlib.h>
 
 //[]-------------------------------------------------------------[]
-//   Função: conta9()
-//   Entrada: vetor de inteiros v e o tamanho n  
-//   Saída: devolve o numero de vezes que ocorre o  
-//          numero 9.
+//   Função: soma3()
+//   Entrada: vetor de inteiros v de tamanho igual a 3   
+//   Saída: devolve a soma dos elementos do vetor
+//          devolve 0 em caso de empate.
 //[]-------------------------------------------------------------[]
-int conta9(int v[], int n){
-  // escreva seu codigo aqui...	
-  return 0;
+int soma3(int v[3]){
+   return v[0] + v[1] + v[2];
 }
 
 
@@ -34,56 +34,54 @@ void testar(int obtido, int esperado){
 //    Casos de testes
 //[]-------------------------------------------------------------[]
 void caso_de_teste01(){
-   int v[3] = {1, 2, 9}; 	
-   testar(conta9(v,3), 1);
+   int v[3] = {1,2,3};
+   testar(soma3(v), 6);
 }
 
 void caso_de_teste02(){
-   int v[3] = {1, 9, 9}; 	
-   testar(conta9(v,3), 2);
+   int v[3] = {5, 11, 2};	
+   testar(soma3(v), 18);
 }
 
 void caso_de_teste03(){
-   int v[5] = {1, 9, 9, 3, 9}; 	
-   testar(conta9(v,5), 3);
+   int v[3] = {7,0,0};	
+   testar(soma3(v), 7);
 }
 
-
 void caso_de_teste04(){
-   int v[3] = {1, 2, 3}; 	
-   testar(conta9(v,3), 0);
+   int v[3] = {1,2,1};	
+   testar(soma3(v), 4);
 }
 
 void caso_de_teste05(){
-   int v[3] = {0}; 	
-   testar(conta9(v,0), 0);
+   int v[3] = {1,1,1};	
+   testar(soma3(v), 3);
 }
 
 void caso_de_teste06(){
-   int v[5] = {4, 2, 4, 3, 1};
-   testar(conta9(v,5), 0);
+   int v[3] = {2,3,5};	
+   testar(soma3(v), 10);
 }
 
 void caso_de_teste07(){
-   int v[5] = {9, 2, 4, 3, 1}; 	
-   testar(conta9(v,5), 1);
+   int v[3] = {2,7,2};	
+   testar(soma3(v), 11);
 }
 
 void caso_de_teste08(){
-   int v[3] = {9, 9, 9}; 	
-   testar(conta9(v,3), 3);
+   int v[3] = {4,5,6};	
+   testar(soma3(v), 15);
 }
 
 void caso_de_teste09(){
-   int v[3] = {0, 0, 9}; 	
-   testar(conta9(v,3), 1);
+   int v[3] = {2,4,6};	
+   testar(soma3(v), 12);
 }
 
 void caso_de_teste10(){
-   int v[3] = {1, 9, 1}; 	
-   testar(conta9(v,3), 1);
+   int v[3] = {3,6,9};	
+   testar(soma3(v), 18);
 }
-
 
 
 //[]-------------------------------------------------------------[]

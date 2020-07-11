@@ -14,7 +14,7 @@
 //          devolve o dobro da soma
 //[]-------------------------------------------------------------[]
 int soma_dobro(int a, int b){
-   // seu codigo aqui	
+   // escreva seu codigo aqui ...	
    return 0;
 }
 

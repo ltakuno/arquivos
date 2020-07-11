@@ -1,19 +1,24 @@
 //[]--------------------------------------------------------------[]
-//    Nome do arquivo: ex09.c
+//    Nome do arquivo: ex12.c
 //    Importante: nao altere o nome do arquivo.
 //[]--------------------------------------------------------------[]
     
 #include<stdio.h>
 
 //[]-------------------------------------------------------------[]
-//   Função: conta9()
-//   Entrada: vetor de inteiros v e o tamanho n  
-//   Saída: devolve o numero de vezes que ocorre o  
-//          numero 9.
+//   Função: sequencia_66_67()
+//   Entrada: vetor v de inteiros e o tamanho n. 
+//   Saída: devolve o numero de vezes que dois 6's 
+//          aparecem um do lado do outro. Conte também
+//          os casos em que um 6 eh seguido de 7.
 //[]-------------------------------------------------------------[]
-int conta9(int v[], int n){
-  // escreva seu codigo aqui...	
-  return 0;
+int sequencia_66_67(int v[], int n){
+  int contador = 0;
+  for (int i=0; i < n-1; i++) {
+    if ((v[i]==6 && v[i+1]==6) || (v[i]==6 && v[i+1]==7)) 
+	    contador++;
+  }
+  return contador;     
 }
 
 
@@ -27,61 +32,70 @@ void testar(int obtido, int esperado){
 	   printf("Parabéns !!!");
    else
 	   printf("Ainda não !!!");
-   printf(" obtido: %d  esperado: %d\n", obtido, esperado);
+   printf(" obtido: %d esperado: %d\n", obtido, esperado);
 }
 
 //[]-------------------------------------------------------------[]
 //    Casos de testes
 //[]-------------------------------------------------------------[]
 void caso_de_teste01(){
-   int v[3] = {1, 2, 9}; 	
-   testar(conta9(v,3), 1);
+   int v[3] = {6,6,2};
+
+   testar(sequencia_66_67(v, 3), 1);
 }
 
 void caso_de_teste02(){
-   int v[3] = {1, 9, 9}; 	
-   testar(conta9(v,3), 2);
+   int v[4] = {6,6,2,6};
+
+   testar(sequencia_66_67(v, 4), 1);
 }
 
 void caso_de_teste03(){
-   int v[5] = {1, 9, 9, 3, 9}; 	
-   testar(conta9(v,5), 3);
+   int v[4] = {6,7,2,6};
+
+   testar(sequencia_66_67(v, 4), 1);
 }
 
-
 void caso_de_teste04(){
-   int v[3] = {1, 2, 3}; 	
-   testar(conta9(v,3), 0);
+   int v[5] = {6,7,2,6,7};
+
+   testar(sequencia_66_67(v, 5), 2);
 }
 
 void caso_de_teste05(){
-   int v[3] = {0}; 	
-   testar(conta9(v,0), 0);
+    int v[3] = {1,6,3};
+
+   testar(sequencia_66_67(v, 3), 0);
 }
 
 void caso_de_teste06(){
-   int v[5] = {4, 2, 4, 3, 1};
-   testar(conta9(v,5), 0);
+   int v[3] = {6,1,1};
+
+   testar(sequencia_66_67(v, 3),0);
 }
 
 void caso_de_teste07(){
-   int v[5] = {9, 2, 4, 3, 1}; 	
-   testar(conta9(v,5), 1);
+   int v[4] = {3,6,7,6};
+
+   testar(sequencia_66_67(v, 4), 1);
 }
 
 void caso_de_teste08(){
-   int v[3] = {9, 9, 9}; 	
-   testar(conta9(v,3), 3);
+   int v[4] = {3,6,6,7};
+
+   testar(sequencia_66_67(v, 4), 2);
 }
 
 void caso_de_teste09(){
-   int v[3] = {0, 0, 9}; 	
-   testar(conta9(v,3), 1);
+   int v[4] = {6,3,6,6};
+
+   testar(sequencia_66_67(v, 4), 1);
 }
 
 void caso_de_teste10(){
-   int v[3] = {1, 9, 1}; 	
-   testar(conta9(v,3), 1);
+   int v[4] = {6,7,6,6};
+
+   testar(sequencia_66_67(v, 4), 2);
 }
 
 

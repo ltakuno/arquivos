@@ -1,5 +1,5 @@
 //[]--------------------------------------------------------------[]
-//    Nome do arquivo: ex08.c
+//    Nome do arquivo: ex16.c
 //    Importante: nao altere o nome do arquivo.
 //[]--------------------------------------------------------------[]
     
@@ -8,15 +8,19 @@
 
 #define btoa(x) x ? "true" : "false" 
 //[]-------------------------------------------------------------[]
-//   Função: ultimo_digito()
-//   Entrada: inteiros a e b, não negativos 
-//   Saída: devolve true se ele tem os mesmos ultimos digitos
-//          ex: 57 e 27, tem o ultimo digito igual a 7
+//   Função: primeiro_ultimo_iguais()
+//   Entrada: vetor v1 de inteiros e o tamanho n1,
+//            vetor v2 de inteiros e o tamanho n2. 
+//   Saida: devolve true se tiverem o primeiro
+//          elemento dos vetors sao iguais ou 
+//          o ultimo elemento do vetor sao iguais.
+//          Ambos vetores tem tamanho maior ou iguais a 1.
+//          E false caso contrario.
 //[]-------------------------------------------------------------[]
-bool ultimo_digito(int a, int b){
-   return a%10 == b%10;
+bool primeiro_ultimo_iguais(int v1[], int n1, int v2[], int n2){
+  // escreva o seu codigo aqui ...	
+  return false;
 }
-
 
 //[]-------------------------------------------------------------[]
 //   Função: testar()
@@ -35,43 +39,70 @@ void testar(bool obtido, bool esperado){
 //    Casos de testes
 //[]-------------------------------------------------------------[]
 void caso_de_teste01(){
-   testar(ultimo_digito(7,17), true);
+   int v1[5] = {1,1,2,2,1};
+   int v2[1] = {1};
+
+   testar(primeiro_ultimo_iguais(v1, 5, v2, 1), true);
 }
 
 void caso_de_teste02(){
-   testar(ultimo_digito(6,17), false);
+   int v1[6] = {1,1,6,2,2,6};
+   int v2[3] = {2,3,4};
+
+   testar(primeiro_ultimo_iguais(v1, 6, v2, 3), false);
 }
 
 void caso_de_teste03(){
-   testar(ultimo_digito(3,113), true);
+   int v1[7] = {1,1,1,2,2,2,3};
+   int v2[2] = {7,3};
+
+   testar(primeiro_ultimo_iguais(v1, 7, v2, 2), true);
 }
 
 void caso_de_teste04(){
-   testar(ultimo_digito(114, 113), false);
+   int v1[7] = {2,1,2,2,1,2,1};
+   int v2[3] = {7,4,3};
+   testar(primeiro_ultimo_iguais(v1, 7, v2, 3), false);
 }
 
 void caso_de_teste05(){
-   testar(ultimo_digito(114,4), true);
+   int v1[3] = {1,2,3};
+   int v2[2] = {1,3};
+
+   testar(primeiro_ultimo_iguais(v1, 3, v2, 2), true);
 }
 
 void caso_de_teste06(){
-   testar(ultimo_digito(10,0), true);
+   int v1[3] = {1,6,2};
+   int v2[1] = {6};
+
+   testar(primeiro_ultimo_iguais(v1, 3, v2, 1),false);
 }
 
 void caso_de_teste07(){
-   testar(ultimo_digito(11,0), false);
+   int v1[2] = {1,1};
+   int v2[3] = {1,2,3};
+   testar(primeiro_ultimo_iguais(v1, 2, v2, 3), true);
 }
 
 void caso_de_teste08(){
-   testar(ultimo_digito(27,48), false);
+   int v1[2] = {5,1};
+   int v2[2] = {1,5};
+
+   testar(primeiro_ultimo_iguais(v1, 2, v2, 2), false);
 }
 
 void caso_de_teste09(){
-   testar(ultimo_digito(50, 40), true);
+   int v1[1] = {6};
+   int v2[2] = {6,6};
+   testar(primeiro_ultimo_iguais(v1, 1, v2, 2), true);
 }
 
 void caso_de_teste10(){
-   testar(ultimo_digito(57, 27), true);
+   int v1[1] = {0};
+   int v2[2] = {0,0};
+
+   testar(primeiro_ultimo_iguais(v1, 0, v2, 2), false);
 }
 
 
