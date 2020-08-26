@@ -1,3 +1,7 @@
+//[]--------------------------------------------------------------[]
+//    Nome do arquivo: ex03.c
+//    Importante: nao altere o nome do arquivo.
+//[]--------------------------------------------------------------[]
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
