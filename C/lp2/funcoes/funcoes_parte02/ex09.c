@@ -14,9 +14,7 @@
 //          devolve false caso contrário.
 //[]-------------------------------------------------------------[]          
 bool iguais(int v1[], int v2[], int n){
-    for (int i = 0; i < n; i++)
-       if (v1[i] != v2[i])
-	       return false;
+    // escreva o seu código aqui
     return true;
 }
 

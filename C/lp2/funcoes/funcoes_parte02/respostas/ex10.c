@@ -10,7 +10,6 @@
 //   Função: soma3()
 //   Entrada: vetor de inteiros v de tamanho igual a 3   
 //   Saída: devolve a soma dos elementos do vetor
-//          devolve 0 em caso de empate.
 //[]-------------------------------------------------------------[]
 int soma3(int v[3]){
    return v[0] + v[1] + v[2];
