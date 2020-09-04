@@ -6,16 +6,7 @@
 #include<stdbool.h>
 
 
-bool eh_palindromo(int x){
-   int y = 0;
-   int aux = x;
-
-   while (aux > 0){
-      y = y * 10 + aux % 10;
-      aux = aux / 10;
-   }
-   return y == x;
-}
+ 
 
 //[]-------------------------------------------------------------[]
 //   Função: conta_numeros_palindromos()
@@ -28,12 +19,8 @@ bool eh_palindromo(int x){
 //       ex.:  121, 313, 4, 55 ...
 //[]-------------------------------------------------------------[]
 int conta_numeros_palindromos(int v[], int n){
-   int contador = 0;
-   for (int i = 0; i < n; i++)
-	if (eh_palindromo(v[i])){
-	     contador++;
-	}	     
-   return contador;
+   // escreva o seu codigo aqui ... 
+   return 0;
 }
 
 

@@ -17,7 +17,7 @@ void troca(int v[], int i, int j){
 //[]-------------------------------------------------------------[]
 //   Função: troca_primeiro_com_ultimo()
 //   Entrada: vetor de inteiros v[] e o seu tamanho n
-//   Saída:   troque o primeiro elemento com o maior elemento 
+//   Saída:   troque o primeiro elemento com o ultimo elemento 
 //            do vetor.
 //[]-------------------------------------------------------------[]
 void troca_primeiro_com_ultimo(int v[], int n){

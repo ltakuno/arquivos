@@ -8,8 +8,8 @@
 //[]-------------------------------------------------------------[]
 //   Função: maior_multiplo_de_x()
 //   Entrada: vetor de inteiros v[] e o seu tamanho n, e inteiro x 
-//   Saída:   devolve a soma de elementos do vetor que
-//            são multiplos de x.
+//   Saída:   devolve o maior elemento do vetor que
+//            é multiplo de x.
 //[]-------------------------------------------------------------[]
 int maior_multiplo_de_x(int v[], int n, int x){
    // escreva o seu codigo aqui 	
