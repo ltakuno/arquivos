@@ -121,3 +121,34 @@ print(indices(3,[1,2,3,4,3,4,3,4]))
 print(indices("a",["b","a","n","a","n","a"]))
 
 
+func indices<T: Equatable>(_ x: T,_ v:[T]) -> [Int]{
+    return v.enumerated().filter{ $0.1 == x }.map{ $0.0 }
+}
+
+print(indices(4,[1,2,3,4,3,4,3,4]))
+print(indices("a",["b","a","n","a","n","a"]))
+
+
+
+func indices<T: Equatable>(_ x: T,_ v:[T]) -> [Int]{
+    return v.indices.filter{ v[$0] == x }
+}
+
+print(indices(4,[1,2,3,4,3,4,3,4]))
+print(indices("a",["b","a","n","a","n","a"]))
+
+
+
+func indices<T: Equatable>(_ x: T,_ v:[T]) -> [Int]{
+    return (0..<v.count).filter{ v[$0] == x }
+}
+
+print(indices(4,[1,2,3,4,3,4,3,4]))
+print(indices("a",["b","a","n","a","n","a"]))
+
+
+
+
+
+
+
