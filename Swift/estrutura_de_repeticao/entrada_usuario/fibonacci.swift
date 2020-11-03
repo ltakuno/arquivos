@@ -28,3 +28,13 @@ let n = Int(readLine()!)!
 mostrar_serie_fibonacci(n)
 
 
+// func mostra_serie_fibonacci(_ n: Int){
+//   var i = 1
+//   var j = 1
+//   for _ in 1...n {
+//     print("\(i) ",  terminator: "")
+//     (i, j) = (j, i + j)
+//   }
+// }
+
+// mostra_serie_fibonacci(10)
