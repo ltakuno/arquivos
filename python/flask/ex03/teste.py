@@ -2,6 +2,13 @@ from flask import Flask, jsonify, request, render_template
 
 app = Flask(__name__)
 
+@app.route('/get_teste', methods=['GET'])
+def get_teste():
+    login = request.args.get('login', 'usuario')
+    senha = request.args.get('pass', 'senha')
+    return render_template('form_teste.html', usuario=login, senha=senha)
+
+
 
 @app.route('/')
 def index_template():
