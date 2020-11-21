@@ -147,6 +147,12 @@ print(indices(4,[1,2,3,4,3,4,3,4]))
 print(indices("a",["b","a","n","a","n","a"]))
 
 
+let array = [6, 3, 1, 9, 4, 6]
+let minNumber = array.reduce(Int.max) { min($0, $1) } // 1
+let maxNumber = array.reduce(Int.min) { max($0, $1) } // 1
+print(minNumber)
+print(maxNumber)
+
 
 
 
