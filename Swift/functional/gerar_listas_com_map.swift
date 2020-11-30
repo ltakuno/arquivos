@@ -25,3 +25,11 @@ let s1 =  Set(Array(stride(from:0, to: 24, by: 3)))
 var s2 =  Set(Array(0...23))
 print(s2.subtracting(s1).sorted())
 
+
+
+let xs1 = Array(sequence(first: 0, next: {$0 + 3}).prefix(9)).map{x in [x+1, x+2]}
+
+print(xs1)
+print(xs1.reduce([], +))
+print(Array(xs1.joined()))
+print(Array(sequence(first: 0, next: {$0 + 3}).prefix(9)).flatMap{x in [x+1, x+2]})
