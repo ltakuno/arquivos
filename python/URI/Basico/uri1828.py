@@ -2,7 +2,7 @@
 
 t = int(input())
 n = 1
-jogada = { "tesoura": 0, "papel": 1, "pedra" : 2, "lagarto": 3, "Spock": 4}
+jogada = {"tesoura": 0, "papel": 1, "pedra" : 2, "lagarto": 3, "Spock": 4}
 
 while (n <= t):
     sheldon, raj = map(str, input().split())
