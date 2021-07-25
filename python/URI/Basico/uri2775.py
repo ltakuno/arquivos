@@ -23,7 +23,6 @@ def conta_intercala(A, p, q, r, tempo, B, T):
             A[k] = B[j]
             tempo[k] = T[j]
             for ii in range(i, q+1):
-                if ii != j:
                     c += T[ii] + T[j]
                     #print('pacotes: {} {}'.format(B[ii], B[j]))
                     #print('tempo: {} {}'.format(T[ii], T[j]))
